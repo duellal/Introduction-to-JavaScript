@@ -20,7 +20,8 @@ Do the following:
    HINT: no function required
 */
 
-
+let votingAge = 24
+console.log(votingAge >= 18)
 
 /*
 Task 1b - Values (not auto tested)
@@ -34,9 +35,14 @@ Do the following:
    HINT: no function required
 */
 
+let var1 = 45
+let var2 = 9
 
+if(var2 === 9){
+  var1 = 6
+}
 
-
+console.log(var1)
 
 /*
 Task 1c - Convert Strings to Numbers (not auto tested)
@@ -49,8 +55,13 @@ Do the following:
    HINT: look up the Number method
 */
 
+let year = '1999'
 
+console.log(year)
+console.log(Number(year))
 
+console.log(year === 1999)
+console.log(Number(year) === 1999)
 
 /*
 Task 1d - Multiply
@@ -61,8 +72,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a, b){
+  return a * b;
 }
 
 
@@ -77,8 +88,8 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return age * 7;
 }
 
 
@@ -129,11 +140,29 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight, age){
+  if(age >= 1){
+    if(weight <= 5){
+      return weight *.05
+    }
+    else if(weight >= 6 && weight <= 10){
+      return weight *.04
+    }
+    else if(weight >= 11 && weight <= 15){
+      return weight * .03
+    }
+    else{return weight * .02}
+  }
+  else if(age >= 2/12 && age < 4/12){
+    return weight * .1
+  }
+  else if(age >= 4/12 && age < 7/12){
+    return weight * .05
+  }
+  else if(age >= 7/12 && age < 1){
+    return weight * .04
+  }
 }
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -156,8 +185,54 @@ Use the game function below to do the following:
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
 
-function game(user, computer){
-  /*add your code here*/
+// function getComputer() {
+// 	let randNum = Math.random();
+
+// 	if (randNum <= 1 / 3) {
+// 		return "rock";
+// 	} else if (randNum > 1 / 3 && randNum <= 2 / 3) {
+// 		return "paper";
+// 	} else {
+// 		return "scissors";
+// 	}
+// }
+
+// function game(user) {
+// 	let computer = getComputer();
+// 	if(user === 'rock' && computer === 'scissors' || user === 'scissors' && computer === 'paper' || user === 'paper' && computer === 'rock'){
+// 		return 'you win!'
+// 	}
+// 	else if(user === 'scissors' && computer === 'rock' || user === 'paper' && computer === 'scissors' || user === 'rock' && computer === 'paper'){
+// 		return 'you lose!'
+// 	}
+// 	else{
+// 		return "it's a tie"
+// 	}
+// }
+
+//above code does work, but does not clear the tests 
+
+let computer = Math.random();
+
+	if (computer <= 1 / 3) {
+		computer = "rock";
+	} else if (computer > 1 / 3 && computer <= 2 / 3) {
+		computer = "paper";
+	} else {
+		computer = "scissors";
+	}
+
+
+function game(user, computer) {
+	if(user === 'rock' && computer === 'scissors' || user === 'scissors' && computer === 'paper' || user === 'paper' && computer === 'rock'){
+		return 'you win!'
+	}
+	else if(user === 'scissors' && computer === 'rock' || user === 'paper' && computer === 'scissors' || user === 'rock' && computer === 'paper'){
+		return 'you lose!'
+	}
+	else{
+		return "it's a tie"
+	}
 }
 
 
@@ -173,8 +248,8 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(km){
+  return km * 0.621371
 }
 
 
@@ -187,8 +262,8 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  return cm / 30.48
 }
 
 
@@ -207,9 +282,24 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(soda){
+  while (soda >= 1){
+    return(
+      `${soda} bottles of soda on the wall, ${soda} bottles of soda, take one down pass it around ${(soda -1)} bottles of soda on the wall`
+    )
+    soda = soda - 1
+  }
 }
+
+//both functions above and below pass the tests
+
+// function annoyingSong(soda){
+//   for(let i = soda; i >= 1; i--){
+//     return (
+//       `${soda} bottles of soda on the wall, ${soda} bottles of soda, take one down pass it around ${(soda -1)} bottles of soda on the wall`
+//     )
+//   }
+// }
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -227,10 +317,21 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(score) {
+  let result;
+  if (score >= 90){
+    result = 'you got an A';
+  } else if (89 >= score && score >= 80) {
+    result = 'you got a B';
+  } else if (79 >= score && score >= 70) {
+    result = 'you got a C';
+  } else if (69 >= score && score >= 60) {
+    result = 'you got a D';
+  } else if (59 >= score) {
+    result = 'you got an F';
+  }
+  return result
 }
-
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
@@ -245,10 +346,19 @@ HINT - you may need to study tomorrow's content on arrays
 HINT - try looking up the .includes() method
 */
 
+const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function countVowels(string) {
+	let count = 0;
+	for (let letter of string) {
+		if (vowels.includes(letter)) {
+			count++;
+		}
+	}
+	return count;
 }
+
+console.log(countVowels("I love dogs!"));
 
 
 
